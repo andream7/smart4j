@@ -1,4 +1,4 @@
-package org.smart4j.chapter2.util;
+package org.smart4j.framework.util;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,6 +9,9 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 属性文件工具类
+ *
+ * @author huangyong
+ * @since 1.0.0
  */
 public final class PropsUtil {
 
@@ -21,7 +24,7 @@ public final class PropsUtil {
         Properties props = null;
         InputStream is = null;
         try {
-            is = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName);
+            is = ClassUtil.getClassLoader().getResourceAsStream(fileName);
             if (is == null) {
                 throw new FileNotFoundException(fileName + " file is not found");
             }
@@ -42,14 +45,14 @@ public final class PropsUtil {
     }
 
     /**
-     * 获取字符型属性（默认值为空字符串）
+     * 获取 String 类型的属性值（默认值为空字符串）
      */
     public static String getString(Properties props, String key) {
         return getString(props, key, "");
     }
 
     /**
-     * 获取字符型属性（可指定默认值）
+     * 获取 String 类型的属性值（可指定默认值）
      */
     public static String getString(Properties props, String key, String defaultValue) {
         String value = defaultValue;
@@ -60,13 +63,15 @@ public final class PropsUtil {
     }
 
     /**
-     * 获取数值型属性（默认值为 0）
+     * 获取 int 类型的属性值（默认值为 0）
      */
     public static int getInt(Properties props, String key) {
         return getInt(props, key, 0);
     }
 
-    // 获取数值型属性（可指定默认值）
+    /**
+     * 获取 int 类型的属性值（可指定默认值）
+     */
     public static int getInt(Properties props, String key, int defaultValue) {
         int value = defaultValue;
         if (props.containsKey(key)) {
@@ -76,14 +81,14 @@ public final class PropsUtil {
     }
 
     /**
-     * 获取布尔型属性（默认值为 false）
+     * 获取 boolean 类型属性（默认值为 false）
      */
     public static boolean getBoolean(Properties props, String key) {
         return getBoolean(props, key, false);
     }
 
     /**
-     * 获取布尔型属性（可指定默认值）
+     * 获取 boolean 类型属性（可指定默认值）
      */
     public static boolean getBoolean(Properties props, String key, boolean defaultValue) {
         boolean value = defaultValue;
