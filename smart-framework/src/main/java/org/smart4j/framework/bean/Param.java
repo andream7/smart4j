@@ -90,6 +90,7 @@ public class Param {
      * 验证参数是否为空
      */
     public boolean isEmpty() {
+
         return CollectionUtil.isEmpty(formParamList) && CollectionUtil.isEmpty(fileParamList);
     }
 

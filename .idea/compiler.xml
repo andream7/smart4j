@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="chapter1" />
+        <module name="demo" />
+        <module name="chapter4" />
+        <module name="chapter3" />
+        <module name="chapter2" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="chapter1" target="1.5" />
+      <module name="chapter2" target="1.5" />
+      <module name="chapter3" target="1.5" />
+      <module name="chapter4" target="1.5" />
+      <module name="demo" target="1.5" />
+      <module name="smart-framework" target="6" />
+      <module name="smart4j-parent" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

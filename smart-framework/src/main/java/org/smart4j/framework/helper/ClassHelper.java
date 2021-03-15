@@ -10,6 +10,8 @@ import org.smart4j.framework.util.ClassUtil;
 /**
  * 类操作助手类
  *
+ * @author huangyong
+ * @since 1.0.0
  */
 public final class ClassHelper {
 
